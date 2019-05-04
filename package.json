@@ -4,5 +4,15 @@
   "description": "server standard",
   "main": "index.js",
   "author": "valentine256",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc --build tsconfig.json",
+    "start": "yarn build && node ./dist/index.js"
+  },
+
+  "devDependencies": {},
+  
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
