@@ -1,7 +1,11 @@
-function greeter(person) {
-  return "Hello, " + person;
-}
+// Import the express library here
+import express from "express";
+// Instantiate the app here
+const app = express();
 
-let user = "Jane User";
+const PORT = process.env.PORT || 4001;
 
-document.body.innerHTML = greeter(user);
+// Invoke the app's `.listen()` method below:
+app.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
+});
