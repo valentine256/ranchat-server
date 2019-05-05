@@ -16,7 +16,7 @@ export default class User {
   gender: number;
   name: string;
   date: number;
-
+// constructor of this class
   constructor() {
     this.id = 0;
     this.password = "";
@@ -25,6 +25,7 @@ export default class User {
     this.date = Date.now();
   }
 
+// find max value of id in userlist table and return
   async findMaxId(): Promise<number> {
     await client.connect();
     const res: any = await client.query("SELECT max(id) FROM userlist");
@@ -32,14 +33,16 @@ export default class User {
     return res.rows[0].max;
   }
 
+// set this.id is max value of id + 1
   async setNewId() {
     const maxId = await this.findMaxId();
-    console.log(maxId);
     this.id = maxId + 1;
+// console.log for test
+    console.log(maxId);
   }
 
+// async function example by wangue
   async sum(a: number, b: number): Promise<number> {
     return a + b;
   }
-
 }
